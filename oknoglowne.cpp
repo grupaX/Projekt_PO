@@ -1,6 +1,7 @@
 #include "oknoglowne.h"
 #include "ui_oknoglowne.h"
 #include <QTextBrowser>
+#include "eventrec.h"
 
 
 
@@ -23,6 +24,8 @@ OknoGlowne::~OknoGlowne()
 void OknoGlowne::on_pushButton_clicked()
 {
 
+    EventRec newEvent;
+
     int row=0;
     int col=0;
 
@@ -34,7 +37,8 @@ void OknoGlowne::on_pushButton_clicked()
     for (int i = 1; i < 100; ++i){
 
         QTextBrowser *block=new QTextBrowser();
-        block->setText("Jakiś serwer np./Oddział Wygwizdowo \n jakiś tekst");
+        //block->setText("Jakiś serwer np./Oddział Wygwizdowo \n jakiś tekst");
+        block->setText(newEvent.getTitle()+" - "+newEvent.getMakerName());
         block->setMinimumWidth(150);
         block->setMinimumHeight(140);
         //block->setMaximumWidth(250);
